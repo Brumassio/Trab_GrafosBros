@@ -1,6 +1,6 @@
 public class Dfs {
-    int tempo;
-    public void buscaEmProfundidade(Grafos grafo)
+    public static int tempo;
+    public static void buscaEmProfundidade(Grafos grafo)
     {
         for(Vertice u : grafo.vertices)
         {
@@ -17,7 +17,7 @@ public class Dfs {
         }
     }
 
-    public void dfs_visit(Vertice ver)
+    public static void dfs_visit(Vertice ver)
     {
         tempo = tempo + 1;
         ver.cor = "cinza";
