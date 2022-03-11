@@ -2,15 +2,16 @@ import java.util.LinkedList;
 
 //import principal.Grafos;
 public class  Bfs {
-
+    static Vertice v;
     public static void buscaemlar(Grafos grafo, Vertice ver)
     {
+        
         for(Vertice v : grafo.vertices)
         {
             v.dzin = 0;
             v.pai = null;
             v.cor = "branco";
-            System.out.println("dentro do for do bfs");
+            //System.out.println("dentro do for do bfs");
         }
         ver.dzin = 0;
         ver.pai = null;
@@ -19,21 +20,23 @@ public class  Bfs {
         queue.add(ver);
         while(!queue.isEmpty())
         {
-            ver = queue.remove();
-            for(Vertice u : ver.adj)
+            //queue.poll();
+            v = queue.remove();
+            
+            for(Vertice u : v.adj)
             {
                 if(u.cor.equals("branco"))
                 {
-                    u.dzin = ver.dzin +1;
-                    u.pai = ver;
+                    u.dzin = v.dzin +1;
+                    u.pai = v;
                     u.cor = "cinza";
                     queue.add(u);
-                    System.out.println("Aresta: "+ver.num+","+u.num);
+                    System.out.println("Aresta: "+v.num+","+u.num);
 
                 }
                 
             }
-            ver.cor = "preto";
+            v.cor = "preto";
         }
     }
 }
