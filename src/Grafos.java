@@ -28,6 +28,14 @@ public class Grafos {
         vertices.get(u).adj.add(vertices.get(v));
     }
 
+    public static LinkedList<Vertice> OrdenaListaAdj(Grafos grafo){
+        LinkedList<Vertice> listOrd = new LinkedList<Vertice>();
+        for(int i = 0; i< grafo.vertices.size(); i++){
+            
+        }
+        return listOrd;
+    }
+
     public void imprimeVerticeGrafo(Grafos grafo){
         for(int i =0; i< grafo.vertices.size();i++){
             System.out.println(grafo.vertices.get(i).num);
