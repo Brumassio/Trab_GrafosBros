@@ -22,9 +22,17 @@ public class App {
             grafo.addAresta(10, 11);
             grafo.addAresta(12,13);
 
+            /*grafo.addArestaDfs(1,2);
+            grafo.addArestaDfs(1, 4);
+            grafo.addArestaDfs(2, 5);
+            grafo.addArestaDfs(3, 5);
+            grafo.addArestaDfs(3, 6);
+            grafo.addArestaDfs(4, 2);
+            grafo.addArestaDfs(5, 4);
+            grafo.addArestaDfs(6, 6);*/
             
-            //Bfs.buscaemlar(grafo, grafo.vertices.getFirst());
-            Dfs.buscaEmProfundidade(grafo);
+            Bfs.buscaemlar(grafo, grafo.vertices.get(6));
+            //Dfs.buscaEmProfundidade(grafo);
             grafo.imprimeListAdj(grafo);
 
 
