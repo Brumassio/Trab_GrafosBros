@@ -22,6 +22,12 @@ public class Grafos {
         }
     }
 
+    public void addArestaDfs(int u, int v) {
+        u--; //pq começa da posição 0 , ou seja , pos 0 -> num = 1;
+        v--; //pq começa da posição 0 , ou seja , pos 0 -> num = 1;
+        vertices.get(u).adj.add(vertices.get(v));
+    }
+
     public void imprimeVerticeGrafo(Grafos grafo){
         for(int i =0; i< grafo.vertices.size();i++){
             System.out.println(grafo.vertices.get(i).num);
