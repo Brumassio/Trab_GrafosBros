@@ -10,7 +10,7 @@ public class Dfs {
         tempo = 0;
         for(Vertice u : grafo.vertices)
         {
-            if(u.cor == "branco")
+            if(u.cor.equals("branco"))
             {
                 dfs_visit(u);
             }
@@ -24,14 +24,14 @@ public class Dfs {
         ver.dzin = tempo;
         for(Vertice v : ver.adj)
         {
-            if(v.cor == "branco")
+            if(v.cor.equals("branco"))
             {
                 v.pai = ver;
                 dfs_visit(v);
             }
-            ver.cor = "preto";
-            tempo = tempo +1;
-            ver.fzin = tempo;
         }
+        ver.cor = "preto";
+        tempo = tempo +1;
+        ver.fzin = tempo;
     }
 }
