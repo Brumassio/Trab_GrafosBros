@@ -10,6 +10,8 @@ public class Vertice {
     int dzin;
     int fzin;
     Vertice pai;
+    boolean maior_adj;
+    Integer chave;
 
 
     public Vertice(int num) {
