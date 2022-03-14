@@ -1,6 +1,7 @@
 import java.util.LinkedList;
-
+import java.util.TreeMap;
 public class Prim {
+    
     Vertice ver;
     public void prim(Grafos grafo,Vertice w,Vertice r){
         for(Vertice u: grafo.vertices){
