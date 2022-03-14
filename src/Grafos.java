@@ -22,19 +22,6 @@ public class Grafos {
         }
     }
 
-    public void addArestaDfs(int u, int v) {
-        u--; //pq começa da posição 0 , ou seja , pos 0 -> num = 1;
-        v--; //pq começa da posição 0 , ou seja , pos 0 -> num = 1;
-        vertices.get(u).adj.add(vertices.get(v));
-    }
-
-    public static LinkedList<Vertice> OrdenaListaAdj(Grafos grafo){
-        LinkedList<Vertice> listOrd = new LinkedList<Vertice>();
-        for(int i = 0; i< grafo.vertices.size(); i++){
-            
-        }
-        return listOrd;
-    }
 
     public void imprimeVerticeGrafo(Grafos grafo){
         for(int i =0; i< grafo.vertices.size();i++){
@@ -42,9 +29,16 @@ public class Grafos {
         }
     }
 
+    public static void imprimeVzinDzin(LinkedList<Vertice> list){
+        for(int i=0;i<list.size();i++)
+        {
+            System.out.println("Dzin: "+list.get(i).dzin + "  Fzin: "+list.get(i).fzin);
+        }
+    }
+
     public void imprimeListAdj(Grafos grafo){
         for(int i = 0; i< grafo.vertices.size(); i++){
-            System.out.println("\n\n********** Vertice "+ grafo.vertices.get(i) +" ********** \n dzin : "+grafo.vertices.get(i).dzin + "\n fzin :"+grafo.vertices.get(i).fzin);
+            System.out.println("\n\n********** Vertice "+ grafo.vertices.get(i) +" ********** \n Dzin: "+ grafo.vertices.get(i).dzin + "\nFzin: "+grafo.vertices.get(i).fzin+"\n");
             for(int j =0; j< grafo.vertices.get(i).adj.size();j++){
                 System.out.println("Adj n.º "+j+": "+ grafo.vertices.get(i).adj.get(j).num);
             }
