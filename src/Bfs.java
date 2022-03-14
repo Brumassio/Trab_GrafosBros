@@ -1,6 +1,5 @@
 import java.util.LinkedList;
 
-//import principal.Grafos;
 public class  Bfs {
     static Vertice v;
     public static void buscaemlar(Grafos grafo, Vertice ver)
@@ -11,7 +10,6 @@ public class  Bfs {
             v.dzin = 0;
             v.pai = null;
             v.cor = "branco";
-            //System.out.println("dentro do for do bfs");
         }
         ver.dzin = 0;
         ver.pai = null;
@@ -20,7 +18,6 @@ public class  Bfs {
         queue.add(ver);
         while(!queue.isEmpty())
         {
-            //queue.poll();
             v = queue.remove();
             
             for(Vertice u : v.adj)
