@@ -1,7 +1,5 @@
 
-//import java.util.List;
 import java.util.LinkedList;
-//package Trabalho_Grafos;
 
 public class Vertice {
     int num;
@@ -17,12 +15,14 @@ public class Vertice {
     public Vertice(int num) {
         this.num = num;
         this.adj = new LinkedList<Vertice>();
-        //System.out.println("dentro do construtor do vertice");
+    }
+
+    public Vertice() {
     }
 
     public String toString() {
         return "Vertice(" + num + ")";
     }
-}//class Vertice {
+}
     
-//}
+
