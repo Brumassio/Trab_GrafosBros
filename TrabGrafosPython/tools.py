@@ -1,20 +1,31 @@
 from Grafo import Grafo
 
-def trocarCor(verticeOrigem, verticeDestino, grafo):
-    #print(verticeOrigem.cor)
-    #print(verticeDestino.cor)
-    if verticeOrigem.cor == grafo.cores[0]:
-        verticeDestino.cor = grafo.cores[1]
-    elif verticeOrigem.cor == grafo.cores[1]:
-        verticeDestino.cor =  grafo.cores[2]
-    elif verticeOrigem.cor == grafo.cores[2]:
-        verticeDestino.cor = grafo.cores[3]
-    elif verticeOrigem.cor == grafo.cores[3]:
-        verticeDestino.cor = grafo.cores[0]
-
-
-def arrumaCores(grafo):
+def colorir(grafo):
+    i = 0
+    iteracoes = 0
+    if taColorido(grafo):
+        return True
+    
+    while(i < len(grafo.vertices)):
+        if(grafo.vertices[i].cor != grafo.cores[len(grafo.cores)-1] ):
+            grafo.trocarCor(grafo.vertices[i])
+            if taColorido(grafo):
+                print(iteracoes)
+                return True
+            i = 0
+            iteracoes += 1
+            #print(iteracoes)
+        else:
+            grafo.vertices[i].cor = grafo.cores[0]
+            i += 1
+    print(iteracoes)
+    return False
+       
+def taColorido(grafo):
     for i in  grafo.vertices:
         for j in i.adj:
             if i.cor == j.cor:
-                trocarCor(i,j,grafo)
+                return False
+    return True
+
+    
