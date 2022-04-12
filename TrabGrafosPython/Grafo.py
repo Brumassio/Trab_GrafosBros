@@ -21,21 +21,19 @@ class Grafo:
             print(i.cor)
 
 
-    def trocarCor(self,verticeOrigem, verticeDestino):
+    def trocarCor(self,vertice):
         #print(verticeOrigem.cor)
         #print(verticeDestino.cor)
-        if verticeOrigem.cor == self.cores[0]:
-            verticeDestino.cor = self.cores[1]
-        elif verticeOrigem.cor == self.cores[1]:
-            verticeDestino.cor =  self.cores[2]
-        elif verticeOrigem.cor == self.cores[2]:
-            verticeDestino.cor = self.cores[3]
-        elif verticeOrigem.cor == self.cores[3]:
-            verticeDestino.cor = self.cores[0]
+        if vertice.cor == self.cores[0]:
+            vertice.cor = self.cores[1]
+        elif vertice.cor == self.cores[1]:
+            vertice.cor =  self.cores[2]
+        elif vertice.cor == self.cores[2]:
+            vertice.cor = self.cores[3]
    
 
-    def arrumaCores(self):
-        for i in self.vertices:
-            for j in i.adj:
-                if i.cor == j.cor:
-                    self.trocarCor(i,j) 
+    # def arrumaCores(self):
+    #     for i in self.vertices:
+    #         for j in i.adj:
+    #             if i.cor == j.cor:
+    #                 self.trocarCor(i,j) 
