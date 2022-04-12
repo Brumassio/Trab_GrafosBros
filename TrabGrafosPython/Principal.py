@@ -1,18 +1,36 @@
 from Grafo import Grafo
 import tools
 
+n = int(input("tamanho do grafo: "))
+grafo = Grafo(n) 
 
-grafo = Grafo(5)
-grafo.addAresta(1,2)
-grafo.addAresta(1,3)
-grafo.addAresta(1,4)
-grafo.addAresta(1,5)
-grafo.addAresta(2,3)
+for i in range(n):
+    j = i+1
+    while(j < n):
+        print(i+1,j+1)
+        grafo.addAresta(i+1,j+1)
+        j += 1
+# grafo.addAresta(1,2)
+# grafo.addAresta(1,3)
+# grafo.addAresta(1,4)
+# grafo.addAresta(1,5)
+# grafo.addAresta(2,3)
+# grafo.addAresta(2,4)
+# grafo.addAresta(2,5)
+# grafo.addAresta(3,4)
+# grafo.addAresta(3,5)
+# grafo.addAresta(4,5)
+
+
+
 
 print(grafo.vertices[0].adj)
 print(grafo.vertices[1].adj)
 print("\n")
 # print(len(grafo.vertices))
 #grafo.printarCores(grafo)
-tools.arrumaCores(grafo)
-grafo.printarCores()
+if tools.colorir(grafo):
+    print("Foi possível colorir o grafo !\nGrafo ficou:")
+    grafo.printarCores()
+else:
+    print("Não e possível colorir o grafo  com  4 cores")
