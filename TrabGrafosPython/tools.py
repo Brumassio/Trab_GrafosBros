@@ -28,4 +28,24 @@ def taColorido(grafo):
                 return False
     return True
 
-    
+def lerArquivo(nomeArq):
+
+    with open(nomeArq,"r") as arquivo:
+        linhas = arquivo.readlines()
+        print("ola:",linhas)
+        listinha=[]
+        for i in linhas:
+            listinha.append( i.replace('\n', ""))
+        print("ola2:",listinha)
+        grafo = Grafo(int(listinha[2].split("=")[1]))
+        listinha = listinha[4:]
+        print("lista fofa: ",listinha)
+        for i in listinha:
+            print(i)
+            i = i.split(" ")
+            print("pos split",i)
+            print(f"i[0]: {i[0]} e i[1]: {i[1]}")
+            grafo.addAresta(int(i[0]), int(i[1]))
+            print("oi")
+    return grafo
+        
