@@ -7,7 +7,6 @@ class Grafo:
         for i in range(n):
             self.vertices.append(Vertice(i+1))
             print(self.vertices[i].num)
-        print(self.vertices)
 
     def addAresta(self,u,v):
         u-= 1
@@ -22,8 +21,6 @@ class Grafo:
 
 
     def trocarCor(self,vertice):
-        #print(verticeOrigem.cor)
-        #print(verticeDestino.cor)
         if vertice.cor == self.cores[0]:
             vertice.cor = self.cores[1]
         elif vertice.cor == self.cores[1]:
@@ -31,9 +28,3 @@ class Grafo:
         elif vertice.cor == self.cores[2]:
             vertice.cor = self.cores[3]
    
-
-    # def arrumaCores(self):
-    #     for i in self.vertices:
-    #         for j in i.adj:
-    #             if i.cor == j.cor:
-    #                 self.trocarCor(i,j) 
