@@ -17,7 +17,9 @@ class Grafo:
 
     def printarCores(self):
         for i in self.vertices:
-            print(i.cor)
+            print(f"Vertice [{i.num}] = {i.cor} \nSeus adjacentes: ")
+            for j in i.adj:
+                print(j.cor)
 
 
     def trocarCor(self,vertice):
